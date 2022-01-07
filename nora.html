@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NORA🤍 project</title>
+</head>
+<body>
+    <!-- zone de entrer la question et les reponse  -->
+    <div class="question">
+        <label>enter your question</label>
+        <input type="text" class="question">
+        <label>a/</label>
+        <input type="text" class="answer 1">
+        <label>b/</label>
+        <input type="text" class="answer 2">
+        <label>c/</label>
+        <input type="text" class="answer 3">
+        <label>d/</label>
+        <input type="text" class="answer 4">
+        <button id="btn-ajt">ajouter</button>
+    </div>
+    <!-- ajouter les questions et les reponses pour admin choisir la baonne reponse -->
+    <div class="choice">
+    </div>
+    <!-- les question et les reponse -->
+    <div class="final"></div>
+    <script>
+        let qst = document.querySelectorAll('.question input')
+        let btnAjt = document.getElementById('btn-ajt');
+        let fnl = []
+        btnAjt.onclick = function(){
+            qst.forEach((el)=>{
+                fnl.push(el.value)
+                el.value = '';
+            })
+            let choice = document.querySelector('.choice')
+            choice.innerHTML = `
+                            <p class="question">${fnl[0]}</p>
+                            <p class="answer-1">${fnl[1]}</p>
+                            <p class="answer-2">${fnl[2]}</p>
+                            <p class="answer-3">${fnl[3]}</p>
+                            <p class="answer-4">${fnl[4]}</p>
+                            <button>ajouter</button>           
+            `
+        }
+        
+    </script>
+</body>
+</html>
