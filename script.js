@@ -21,6 +21,10 @@ function addUi(){
                             <p class="answer-2">${fnl[2]}</p>
                             <p class="answer-3">${fnl[3]}</p>
                             <p class="answer-4">${fnl[4]}</p>
-                            <button>ajouter</button>           
+                            <button onclick="addToFinal()">ajouter</button>           
             `
+}
+//add ui to final part
+function addToFinal(){
+    
 }
