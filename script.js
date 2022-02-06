@@ -1,66 +1,76 @@
-        let qst = document.querySelectorAll('.question input')
-        let btnAjt = document.getElementById('btn-ajt');
-        let fnl = []
-        let choice = document.querySelector('.choice')
-        btnAjt.onclick = function(){
-            pushArr()//push value to arr
-            addUi()//add ui
-            empty()//empty the input
-        }
-//push input value to array
-function pushArr(){
-                let obj = {
-        question: qst[0].value,
-        answer1: qst[1].value,
-        answer2: qst[2].value,
-        answer3: qst[3].value,
-        answer4: qst[4].value,
-        rightAns: ''
+let inputs = document.querySelectorAll('.question input');
+let inpu = document.querySelector('.ans')
+let addBtn = document.querySelector('#btn-ajt');
+let que = document.querySelector('.choice')
+let dataAdd = []
+let obj;
+console.log(inpu.value);
+//add event to the btn
+addBtn.onclick = ()=>{
+    let a = inputs[0].value
+    let b = inputs[1].value
+    let c = inputs[2].value
+    let d = inputs[3].value
+    let e = inputs[4].value
+    let f = inputs[5].value
+    let g = ''
+    switch (g) {
+        case a:
+            console.log('good');
+            break;
+        case b:
+            console.log('good');
+            break;
+        case c:
+            console.log('good');
+            break;  
+        case d:
+            console.log('good');
+            break;  
+        case e:
+            console.log('good');
+            break;  
+        case f:
+            console.log('good');
+            break;  
+        default: 
+        drawUi();
+        addData();
+        empty();    
     }
-    fnl.push(obj)
+}
+function drawUi(){
+    let data =  `
+                            <p class="question">${inputs[0].value}</p>
+                            <p class="answer-1" class="corAns">${inputs[1].value}</p>
+                            <p class="answer-2" class="corAns">${inputs[2].value}</p>
+                            <p class="answer-3" class="corAns">${inputs[3].value}</p>
+                            <p class="answer-4" class="corAns">${inputs[4].value}</p>
+                            <p class="rightAns" class="corAns">${inputs[5].value}</p>
+                `
+                console.log(inputs[0]);
+    console.log(data);
+    que.innerHTML += data
 }
 //empty the input after add to dom
 function empty(){
-    qst.forEach((el)=>{
+    inputs.forEach((el)=>{
         el.value = ''
     })
 }
-//add value from array to ui to pick the correct answer
-function addUi(){
-    let ui = fnl.map((itm)=>{
-        return `
-                            <p class="question">${itm.question}</p>
-                            <p class="answer-1" onclick="add(event)" class="corAns">${itm.answer1}</p>
-                            <p class="answer-2" onclick="add(event)" class="corAns">${itm.answer2}</p>
-                            <p class="answer-3" onclick="add(event)" class="corAns">${itm.answer3}</p>
-                            <p class="answer-4" onclick="add(event)" class="corAns">${itm.answer4}</p>         
-            `
-    }).join('')
-    choice.innerHTML = ui
+//add data to array
+function addData(){
+    obj = {
+    answer: inputs[0].value,
+    question1: inputs[1].value,
+    question2: inputs[2].value,
+    question3: inputs[3].value,
+    question4: inputs[4].value,
+    rightAns: inputs[5].value
 }
-//add ui to final part
-function addToFinal(){
-    let final = document.querySelector('.final');
-    let finals = choice.innerHTML
-    final.innerHTML = finals
-}
-//chose the correct answer
-let rightAns = document.querySelector('.corAns');
-// function clicks(){
-//     rightAns.onclick = function(e){
-//     console.log(e.currentTarget);
-// }
-// }
-// if (choice.hasChildNodes()){
-//     console.log('good');
-//         rightAns.onclick = function(e){
-//     console.log(e.currentTarget);
-// }
-// }else{
-//     console.log('not good');
-// }
 
-//testing
-    function add(event){
-        event.currentTarget.classList.toggle('right')
-    }
+    dataAdd.push(obj)
+    console.log(dataAdd);
+    let test = JSON.stringify(dataAdd)
+    localStorage.setItem('question and answer', test)
+}
