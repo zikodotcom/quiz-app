@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz home page</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+        <!-- font awesome -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- start header -->
+    <header>
+        <div class="container">
+            <div id="head">
+                <div id="logo">
+                    <img src="img/Logo.png" alt="">
+                </div>
+                <nav id="for-header">
+                    <i class="fa fa-close"></i>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#main-one">Services</a></li>
+                        <li><a href="#main-two">About Us</a></li>
+                        <li><a href="#main-three">Contact Us</a></li>
+                    </ul>
+                    <button class="sign-in">Sign In</button>
+                    <button class="sign-up">Sign Up</button>
+                </nav>
+                <div class="nav-mobile" >
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+            <div id="header-hero">
+                <div class="side-one">
+                    <h1>QUIZESS</h1>
+                    <h2>For you</h2>
+                    <p>Put you quiz and share it with your friends to test him, or test your skills by doing a quiz.</p>
+                    <button class="btn-one">Write quiz</button>
+                    <button class="btn-two">Test your self</button>
+                </div>
+                <div class="side-two">
+                    <img src="img/image2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- finish header -->
+    <!-- start main -->
+    <main>
+        <div class="container">
+            <div id="main-one">
+                <h1>Services</h1>
+                <div class="services">
+                    <div class="service">
+                        <img src="img/icon1.png" alt="">
+                        <h2>Add your quizess</h2>
+                        <p>add your question and answer by register as admin and share with friend.</p>
+                    </div>
+                    <div class="service">
+                        <img src="img/Icon2.png" alt="">
+                        <h2>Test your skills</h2>
+                        <p>Register as a student, and test your skills by pick a quiz and see your score</p>
+                    </div>
+                    <div class="service">
+                        <img src="img/Icon3.png" alt="">
+                        <h2>Share with friend</h2>
+                        <p>Share your quiz or score with friends and challenging him.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="main-two">
+                <h1>About Us</h1>
+                <div class="contact-us">
+                    <img src="img/Image.png" alt="">
+                    <p>
+                        This website has created by <span>Nora Lakhal</span>, this project about quizess, to create a good environment for the users to add her quizess and shared with friends or student, and also see scores and a lot of good things. wish you enjoyed.
+                    </p>
+                </div>
+            </div>
+            <div id="main-three">
+                <h1>Contact Us</h1>
+                <form action="action_page.php">
+                
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                    </select>
+                
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                
+                    <input type="submit" value="Submit">
+                
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- end main -->
+    <!-- start footer -->
+    <footer>
+        <div class="container">
+            <div id="footer-one">
+                <div class="logo">
+                    <img src="img/Logo.png" alt="">
+                </div>
+                <nav id="for-footer">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#main-one">Services</a></li>
+                        <li><a href="#main-two">About Us</a></li>
+                        <li><a href="#main-three">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <hr>
+            <div id="footer-two">
+                <p>&#169; 2022 <a href="index.html">Nora Lakhal</a>, All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
