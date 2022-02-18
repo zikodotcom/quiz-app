@@ -1,11 +1,12 @@
-let inputs = document.querySelectorAll('.question input');
+let inputs = document.querySelectorAll('.question .form input');
 let inpu = document.querySelector('.ans')
 let addBtn = document.querySelector('#btn-ajt');
 let que = document.querySelector('.choice')
 let dataAdd = []
 let obj;
-console.log(inpu.value);
+let handle = false;
 //add event to the btn
+
 addBtn.onclick = ()=>{
     let a = inputs[0].value
     let b = inputs[1].value
@@ -38,15 +39,21 @@ addBtn.onclick = ()=>{
         addData();
         empty();    
     }
+    console.log(inputs[0].value)
 }
+
+
 function drawUi(){
+    let num = 0;
     let data =  `
-                            <p class="question">${inputs[0].value}</p>
+                            <div class="each-question">
+                                <p class="question">${num++}${inputs[0].value}?</p>
                             <p class="answer-1" class="corAns">${inputs[1].value}</p>
                             <p class="answer-2" class="corAns">${inputs[2].value}</p>
                             <p class="answer-3" class="corAns">${inputs[3].value}</p>
                             <p class="answer-4" class="corAns">${inputs[4].value}</p>
                             <p class="rightAns" class="corAns">${inputs[5].value}</p>
+                            </div>
                 `
                 console.log(inputs[0]);
     console.log(data);
@@ -73,4 +80,16 @@ function addData(){
     console.log(dataAdd);
     let test = JSON.stringify(dataAdd)
     localStorage.setItem('question and answer', test)
+}
+//nav bar btn
+let btn = document.querySelector('.nav-mobile i')
+let btnClose = document.querySelector('#for-header i')
+let navBar = document.getElementById('head')
+
+btn.onclick = ()=>{
+    console.log('good');
+    navBar.style.clipPath = `circle(686px at 0% 0%)`
+}
+btnClose.onclick = ()=>{
+    navBar.style.clipPath = `circle(0px at 0% 0%)`
 }

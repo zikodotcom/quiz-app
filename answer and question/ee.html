@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>quiz home page</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="question.css">
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,31 +30,34 @@
                     <i class="fa fa-close"></i>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="#main-one">Services</a></li>
-                        <li><a href="#main-two">About Us</a></li>
-                        <li><a href="#main-three">Contact Us</a></li>
+                        <li><a href="#main-one">Add question</a></li>
+                        <li><a href="#main-two">quizess</a></li>
+                        <li><a href="#main-three">Log Out</a></li>
                     </ul>
-                    <button class="sign-in">Sign In</button>
-                    <button class="sign-up">Sign Up</button>
                 </nav>
-                <div class="nav-mobile">
-                    <i class="fa fa-bars"></i>
-                </div>
             </div>
+            <div class="nav-mobile">
+                <i class="fa fa-bars"></i>
+            </div>
+                <div class="question">
+                    <div class="form">
+                        <h1>enter your QUIZ</h1>
+                            <input type="text" class="ans" placeholder="Enter your question">
+                            <input type="text" class="answer1 ans" placeholder="Enter choice one">
+                            <input type="text" class="answer2 ans" placeholder="Enter choice two">
+                            <input type="text" class="answer3 ans" placeholder="Enter choice three">
+                            <input type="text" class="answer4 ans" placeholder="Enter choice four">
+                            <input type="text" class="rightAnswer" placeholder="Enter the right answer">
+                            <button id="btn-ajt">ajouter</button>
+                    </div>
+                </div>
         </div>
     </header>
-    <!-- end header -->
-    <!-- start form -->
-    <div class="content">
-        <form action="#">
-            <h1>Login</h1>
-            <input type="email" placeholder="Login(email)" style="display: block;">
-            <input type="password" placeholder="Password"><br>
-            <a href="#">Forgot password?</a><br>
-            <button class="login-btn">Login to your account</button>
-            <button class="register-btn">Create new</button>
-        </form>
-    </div>
-    <script src="/index.js"></script>
+    <main>
+        <div class="choice"></div>
+    </main>
+    <div class="final"></div>
+    <script src="script.js">
+    </script>
 </body>
 </html>

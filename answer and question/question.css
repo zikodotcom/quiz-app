@@ -25,61 +25,120 @@ p, a, h1, h2, h3 {
 }
 
 body {
+  background-color: #f3f2ff;
+}
+
+body header {
+  height: auto;
   background: url(/img/Design2.png);
   background-position: center;
   background-size: cover;
   height: 100vh;
 }
 
-body header {
-  height: auto;
+body header .container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 32%;
 }
 
 body header .container #head {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 1em 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#acb0ff), to(#858bfd));
+  background: linear-gradient(#acb0ff, #858bfd);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  height: 100vh;
+  max-width: 350px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 1em 2em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-clip-path: circle(686px at 0% 0%);
+          clip-path: circle(686px at 0% 0%);
+  -webkit-transition: all 0.8s ease-out;
+  transition: all 0.8s ease-out;
+}
+
+body header .container #head .effect {
+  -webkit-clip-path: circle(686px at 0% 0%);
+          clip-path: circle(686px at 0% 0%);
 }
 
 body header .container #head #logo img {
-  width: 220px;
-  height: 90px;
+  width: 180px;
+  height: auto;
 }
 
 body header .container #head nav {
+  margin-top: 6em;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 body header .container #head nav i {
-  display: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 body header .container #head nav ul {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
 }
 
-body header .container #head nav ul a {
-  margin-right: .75em;
-  color: #121212;
-  font-weight: 400;
+body header .container #head nav ul li {
+  margin: .75em 0;
 }
 
-body header .container #head nav ul a:hover {
-  border-bottom: 3px solid #50efbc;
+body header .container #head nav ul li:hover {
+  background-color: #858BFD;
+  width: 100%;
+  border-radius: 10px;
+}
+
+body header .container #head nav ul li a {
+  font-size: 1.5rem;
+  margin-top: 1.75em;
+  color: #1F0D06;
+  font-weight: 500;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+body header .container #head nav ul li a:hover {
+  background-color: #858BFD;
+  width: 100%;
 }
 
 body header .container #head nav .sign-in {
@@ -117,92 +176,76 @@ body header .container #head nav .sign-up:hover {
   border: none;
 }
 
-body header .container #head .nav-mobile {
-  display: none;
+body header .container .nav-mobile {
+  display: block;
+  font-size: 1.4rem;
+  margin: 1em;
 }
 
-body .content {
+body header .question {
+  margin-top: 10vh;
+  width: 40%;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-body .content #register {
-  z-index: -1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   background: rgba(133, 139, 253, 0.1);
-  padding: 1.5em 1.5em;
   -webkit-backdrop-filter: blur(30px);
           backdrop-filter: blur(30px);
-  min-width: 20%;
-  height: 75vh;
-}
-
-body .content form {
-  z-index: -1;
-  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  background: rgba(133, 139, 253, 0.1);
-  padding: 3em 1.5em;
-  -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
-  min-width: 20%;
-  height: 65vh;
-}
-
-body .content form h1 {
   text-align: center;
-  color: #3b3b3b;
-  font-weight: 600;
-  font-size: 2.2rem;
-  text-transform: uppercase;
 }
 
-body .content form input {
-  margin: 1em 0;
+body header .question .form {
+  width: 100%;
+}
+
+body header .question .form h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1em 0;
+}
+
+body header .question .form input[type="text"] {
+  display: block;
+  margin: 1em 2em;
   outline: none;
   border-top: none;
   border-left: none;
   border-right: none;
   background-color: transparent;
   border-bottom: 2px solid #cacaca;
-  width: 100%;
+  width: 80%;
 }
 
-body .content form input::-webkit-input-placeholder {
+body header .question .form input[type="text"]::-webkit-input-placeholder {
   color: #121212;
   font-weight: 400;
 }
 
-body .content form input:-ms-input-placeholder {
+body header .question .form input[type="text"]:-ms-input-placeholder {
   color: #121212;
   font-weight: 400;
 }
 
-body .content form input::-ms-input-placeholder {
+body header .question .form input[type="text"]::-ms-input-placeholder {
   color: #121212;
   font-weight: 400;
 }
 
-body .content form input::placeholder {
+body header .question .form input[type="text"]::placeholder {
   color: #121212;
   font-weight: 400;
 }
 
-body .content form a {
-  color: #121212;
-  margin: 1em 0;
-  padding: 1em 0;
-}
-
-body .content form .login-btn {
+body header .question .form button {
   background-color: #858bfd;
   color: #fff;
   border-radius: 10px;
@@ -214,32 +257,41 @@ body .content form .login-btn {
   -moz-box-shadow: -1px 4px 5px 0px rgba(210, 210, 211, 0.75);
 }
 
-body .content form .login-btn:hover {
+body header .question .form button:hover {
   color: #858bfd;
   background: none;
   border: 1px solid #858bfd;
 }
 
-body .content form .register-btn {
-  background-color: #858bfd;
-  color: #fff;
+body main {
+  padding: 5em 0;
+  width: 90%;
+  margin: auto;
+}
+
+body main .choice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body main .choice .each-question {
+  width: 40%;
+  height: auto;
+  padding: 1em;
+  background-color: #121212;
+  color: #f3f2ff;
+  text-align: center;
   border-radius: 10px;
-  border: none;
-  padding: .75em 1em;
-  margin: 25px .25em;
-  box-shadow: -1px 4px 5px 0px rgba(210, 210, 211, 0.75);
-  -webkit-box-shadow: -1px 4px 5px 0px rgba(210, 210, 211, 0.75);
-  -moz-box-shadow: -1px 4px 5px 0px rgba(210, 210, 211, 0.75);
+  border: 1px solid #858BFD;
 }
 
-body .content form .register-btn:hover {
-  color: #858bfd;
-  background: none;
-  border: 1px solid #858bfd;
-}
-
-body .content form button {
-  margin-top: 1em;
+body main .choice .each-question p {
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {
@@ -299,8 +351,5 @@ body .content form button {
     font-size: 1.4rem;
     cursor: pointer;
   }
-  body .content form .register-btn {
-    margin: 0;
-  }
 }
-/*# sourceMappingURL=login.css.map */
+/*# sourceMappingURL=question.css.map */
