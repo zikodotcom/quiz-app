@@ -1,23 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>quiz home page</title>
+    <link rel="stylesheet" href="question.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- font awesome -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        .disable{
-            pointer-events: none;
-            cursor: default;
+        :root{
+            --width: 0%;
+        }
+        .info{
+            position: relative;
+        }
+        .info::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background-color: blueviolet;
+            width: var(--width);
+            transition: all 0.8s ease-out;
         }
     </style>
 </head>
 <body>
-    <button class="btn">start quiz</button>
-    <p class="count">0</p>
-    <p class="score">0</p>
-    <div class="qustion"></div>
-    <button class="btn-nxt">next button</button>
+    <header>
+        <div class="container">
+            <div id="head">
+                <div id="logo">
+                    <img src="/img/Logo.png" alt="">
+                </div>
+                <nav id="for-header">
+                    <i class="fa fa-close"></i>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="question.html">Add question</a></li>
+                        <li><a href="answer.html">quizess</a></li>
+                        <li><a href="#main-three">Log Out</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-mobile">
+                <i class="fa fa-bars"></i>
+            </div>
+            <button class="btn">start quiz</button>
+            <div class="content">
+                <div class="info">
+                    <p class="time"> Time Left <span class="count">0</span></p>
+                    <p class="time">Your score <span class="score">0</span></p>
+                </div>
+                <div class="qustion"></div>
+            </div>
+    </header>
+    
+        <script src="header.js"></script>
     <script src="answerscr.js"></script>
 </body>
 </html>

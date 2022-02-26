@@ -8,46 +8,46 @@ let handle = false;
 //add event to the btn
 
 addBtn.onclick = ()=>{
-    let a = inputs[0].value
-    let b = inputs[1].value
-    let c = inputs[2].value
-    let d = inputs[3].value
-    let e = inputs[4].value
-    let f = inputs[5].value
+    let a = inputs[0]
+    let b = inputs[1]
+    let c = inputs[2]
+    let d = inputs[3]
+    let e = inputs[4]
+    let f = inputs[5]
     let g = ''
     switch (g) {
-        case a:
-            console.log('good');
+        case a.value:
+            a.style.border = '4px solid rgb(247 138 138)';
             break;
-        case b:
-            console.log('good');
+        case b.value:
+            b.style.border = '4px solid rgb(247 138 138)';
             break;
-        case c:
-            console.log('good');
+        case c.value:
+            c.style.border = '4px solid rgb(247 138 138)';
             break;  
-        case d:
-            console.log('good');
+        case d.value:
+            d.style.border = '4px solid rgb(247 138 138)';
             break;  
-        case e:
-            console.log('good');
+        case e.value:
+            e.style.border = '4px solid rgb(247 138 138)';
             break;  
-        case f:
-            console.log('good');
+        case f.value:
+            f.style.border = '4px solid rgb(247 138 138)';
             break;  
         default: 
         drawUi();
         addData();
         empty();    
     }
-    console.log(inputs[0].value)
 }
 
 
 function drawUi(){
     let num = 0;
+    num++
     let data =  `
                             <div class="each-question">
-                                <p class="question">${num++}${inputs[0].value}?</p>
+                                <p class="question">${num}${inputs[0].value}?</p>
                             <p class="answer-1" class="corAns">${inputs[1].value}</p>
                             <p class="answer-2" class="corAns">${inputs[2].value}</p>
                             <p class="answer-3" class="corAns">${inputs[3].value}</p>
@@ -81,15 +81,4 @@ function addData(){
     let test = JSON.stringify(dataAdd)
     localStorage.setItem('question and answer', test)
 }
-//nav bar btn
-let btn = document.querySelector('.nav-mobile i')
-let btnClose = document.querySelector('#for-header i')
-let navBar = document.getElementById('head')
 
-btn.onclick = ()=>{
-    console.log('good');
-    navBar.style.clipPath = `circle(686px at 0% 0%)`
-}
-btnClose.onclick = ()=>{
-    navBar.style.clipPath = `circle(0px at 0% 0%)`
-}

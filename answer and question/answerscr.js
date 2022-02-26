@@ -1,8 +1,11 @@
 let startBtn = document.querySelector('.btn')//start btn
-let btnNxt = document.querySelector('.btn-nxt')
 let question = document.querySelector('.qustion')//ui question
+let content = document.querySelector('.content')//ui question
 let time = document.querySelector('.count')
 let scoreDom = document.querySelector('.score')
+let info = document.querySelector('.info')
+let option = document.querySelectorAll('.option p')
+
 let i = -1//intial value for itterate inside array
 // let j = i += 1//affectation
 let qAndA = JSON.parse(localStorage.getItem('question and answer'))//import question from localstorage
@@ -14,8 +17,11 @@ console.log(qAndA);
 //listener about click event for btn start
 startBtn.onclick = () =>{
     i++;
+    startBtn.style.display = 'none';
     initiale();
     drawUi();
+    setTimeout(line,500)
+    content.style.display = 'block'
 }
 //function to incrimente by one and draw ui
 function initiale(){
@@ -23,14 +29,13 @@ function initiale(){
 
 }
 function addOne(){
-    if (count < 21){
+    let btnNxt = document.querySelector('.btn-nxt')
+    if (count < 15){
         count += 1;
     time.innerHTML = count
-        // console.log(count);
     }else{
         clearInterval(init)
-        // count = -1;
-        // console.log(count);
+        btnNxt.style.display = 'block'
     }
     // console.log(count);
 }
@@ -38,28 +43,31 @@ function addOne(){
 function drawUi(){
     let dataUi = `
                     <div class="option">
-                        <p class="question">${qAndA[i].answer}</p>
+                        <p class="question">${qAndA[i].answer}?</p>
                         <p class="answer-1" onclick="cheack(event)" class="corAns">${qAndA[i].question1}</p>
                         <p class="answer-2" onclick="cheack(event)" class="corAns">${qAndA[i].question2}</p>
                         <p class="answer-3" onclick="cheack(event)" class="corAns">${qAndA[i].question3}</p>
                         <p class="answer-4" onclick="cheack(event)" class="corAns">${qAndA[i].question4}</p>
-                    </div>                
+                    </div>  
+            <button class="btn-nxt" onclick="nxtBtn(event)" style="display: none;">Next question</button>
     `
     question.innerHTML = dataUi;
 }
-btnNxt.onclick = ()=>{
+    function nxtBtn(){
     i++;
-    console.log(i);
     if (qAndA.length > i){
         initiale();
         count = 0;
         drawUi();
+        line()
     }else{
-        console.log('good');
+        typeScore()
     }
 }
 //cheak the right answer
 function cheack(event){
+    let btnNxt = document.querySelector('.btn-nxt')
+    btnNxt.style.display = 'block'
     let ansClicked = event.currentTarget
     let correctAns = qAndA[i].rightAns//import right answer from array
     const option = document.querySelectorAll('.option p')
@@ -68,16 +76,34 @@ function cheack(event){
     }
     clearInterval(init)
     if (ansClicked.textContent === correctAns){
-        ansClicked.style.color = '#2EB086'
+        ansClicked.classList.toggle('correct')
         score++
         scoreDom.innerHTML = score
     }else{
-        ansClicked.style.color = '#B8405E'
+        ansClicked.classList.toggle('incorrect')
         clearInterval(count)
         for (j = 0; j < option.length; j++){
             if (option[j].textContent == qAndA[i].rightAns){
-                option[j].style.color = '#2EB086'
+                option[j].classList.toggle('correct')
             }
         }
     }
+    for(let j = 1; option.length; j++){
+        option[j].classList.add('disabled')
+    }
+}
+function line(){
+    let width = i + 1;
+            let numAnswer = (width * 100) / (qAndA.length)
+        document.documentElement.style.setProperty('--width', `${numAnswer}%`)
+        console.log(numAnswer)
+        console.log(document.documentElement.style)
+}
+function typeScore(){
+    let scoreUI = `
+    <p>Your score is ${score}</p>
+    <p>Thanks for your participing</p>
+    `
+    question.innerHTML = scoreUI
+    info.remove()
 }

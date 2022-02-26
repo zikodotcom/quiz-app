@@ -24,10 +24,6 @@ p, a, h1, h2, h3 {
   margin: auto;
 }
 
-.disabled {
-  pointer-events: none;
-}
-
 body {
   background-color: #f3f2ff;
 }
@@ -49,6 +45,9 @@ body header .container {
 }
 
 body header .container #head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background: -webkit-gradient(linear, left top, left bottom, from(#acb0ff), to(#858bfd));
   background: linear-gradient(#acb0ff, #858bfd);
   border-top-right-radius: 20px;
@@ -131,7 +130,7 @@ body header .container #head nav ul li:hover {
 body header .container #head nav ul li a {
   font-size: 1.5rem;
   margin-top: 1.75em;
-  color: #fff;
+  color: #1F0D06;
   font-weight: 500;
   width: 100%;
   text-transform: uppercase;
@@ -183,200 +182,82 @@ body header .container .nav-mobile {
   margin: 1em;
 }
 
-body header .container .btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background-color: #858bfd;
-  color: #fff;
-  border-radius: 10px;
-  border: none;
-  padding: .75em 1em;
-  margin: 0 .25em;
-  box-shadow: -1px 4px 5px 0px rgba(210, 210, 211, 0.75);
-  -webkit-box-shadow: -1px 4px 5px 0px rgba(210, 210, 211, 0.75);
-  -moz-box-shadow: -1px 4px 5px 0px rgba(210, 210, 211, 0.75);
-  -webkit-transition: all 0.8s ease-out;
-  transition: all 0.8s ease-out;
-}
-
-body header .container .btn:hover {
-  color: #858bfd;
-  background: none;
-  border: 1px solid #858bfd;
-}
-
-body header .container .content {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+body header .question {
+  margin-top: 10vh;
+  width: 40%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   background: rgba(133, 139, 253, 0.1);
-  width: 40%;
-  -webkit-transition: all 0.8s ease-out;
-  transition: all 0.8s ease-out;
-}
-
-body header .container .content .info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 1.5em;
-}
-
-body header .container .content .info .time {
-  background: #cbdff5;
-  padding: 0.25em;
-  font-weight: 600;
-  margin-right: .75em;
-}
-
-body header .container .content .info .time span {
-  background-color: #f3f2ff;
-  padding: .1em;
-}
-
-body header .container .content .qustion {
-  padding: 1em;
-  -webkit-transition: all 0.8s ease-out;
-  transition: all 0.8s ease-out;
-}
-
-body header .container .content .qustion p {
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
   text-align: center;
+}
+
+body header .question .form {
+  width: 100%;
+}
+
+body header .question .form h1 {
+  font-size: 1.5rem;
   font-weight: 600;
-  font-size: 2rem;
+  padding: 1em 0;
 }
 
-body header .container .content .qustion .option {
-  padding: 0 1em;
+body header .question .form input[type="text"] {
+  display: block;
+  margin: 1em 2em;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: transparent;
+  border-bottom: 2px solid #cacaca;
+  width: 80%;
 }
 
-body header .container .content .qustion .option .question {
-  padding: .75em 0;
-  font-weight: 700;
-  font-size: 1.2rem;
+body header .question .form input[type="text"]::-webkit-input-placeholder {
+  color: #121212;
+  font-weight: 400;
 }
 
-body header .container .content .qustion .option .answer-1 {
-  background: aliceblue;
-  border: 1px solid #84c5fe;
-  border-radius: 5px;
-  padding: 8px 15px;
-  font-size: 17px;
-  margin-bottom: 15px;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+body header .question .form input[type="text"]:-ms-input-placeholder {
+  color: #121212;
+  font-weight: 400;
 }
 
-body header .container .content .qustion .option .answer-2 {
-  background: aliceblue;
-  border: 1px solid #84c5fe;
-  border-radius: 5px;
-  padding: 8px 15px;
-  font-size: 17px;
-  margin-bottom: 15px;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+body header .question .form input[type="text"]::-ms-input-placeholder {
+  color: #121212;
+  font-weight: 400;
 }
 
-body header .container .content .qustion .option .answer-3 {
-  background: aliceblue;
-  border: 1px solid #84c5fe;
-  border-radius: 5px;
-  padding: 8px 15px;
-  font-size: 17px;
-  margin-bottom: 15px;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+body header .question .form input[type="text"]::placeholder {
+  color: #121212;
+  font-weight: 400;
 }
 
-body header .container .content .qustion .option .answer-4 {
-  background: aliceblue;
-  border: 1px solid #84c5fe;
-  border-radius: 5px;
-  padding: 8px 15px;
-  font-size: 17px;
-  margin-bottom: 15px;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-body header .container .content .qustion .option .correct {
-  color: #155724;
-  background: #d4edda;
-  border: 1px solid #c3e6cb;
-}
-
-body header .container .content .qustion .option .incorrect {
-  color: #721c24;
-  background: #f8d7da;
-  border: 1px solid #f5c6cb;
-}
-
-body header .container .content .qustion .btn-nxt {
-  text-align: center;
+body header .question .form button {
   background-color: #858bfd;
   color: #fff;
   border-radius: 10px;
   border: none;
   padding: .75em 1em;
-  margin: 0 .25em;
+  margin: 25px .25em;
   box-shadow: -1px 4px 5px 0px rgba(210, 210, 211, 0.75);
   -webkit-box-shadow: -1px 4px 5px 0px rgba(210, 210, 211, 0.75);
   -moz-box-shadow: -1px 4px 5px 0px rgba(210, 210, 211, 0.75);
 }
 
-body header .container .content .qustion .btn-nxt:hover {
+body header .question .form button:hover {
   color: #858bfd;
   background: none;
   border: 1px solid #858bfd;
@@ -414,11 +295,8 @@ body main .choice .each-question p {
 }
 
 @media (max-width: 768px) {
-  body header .container #head {
-    -webkit-clip-path: circle(0px at 0% 0%);
-            clip-path: circle(0px at 0% 0%);
-  }
   body header .container #head #for-header {
+    display: none;
     -webkit-animation: all 1s;
             animation: all 1s;
     -webkit-box-orient: vertical;
@@ -432,11 +310,12 @@ body main .choice .each-question p {
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0%;
     height: 100vh;
-    -webkit-clip-path: circle(0px at 0% 0%);
-            clip-path: circle(0px at 0% 0%);
-    -webkit-transition: all 0.8s ease-out;
-    transition: all 0.8s ease-out;
+    background-color: #858bfd;
   }
   body header .container #head #for-header i {
     display: block;
@@ -472,12 +351,5 @@ body main .choice .each-question p {
     font-size: 1.4rem;
     cursor: pointer;
   }
-  body header .container .content {
-    width: 70%;
-  }
-  body header .question {
-    max-width: 60%;
-    width: 50%;
-  }
 }
-/*# sourceMappingURL=question.css.map */
+/*# sourceMappingURL=answer.css.map */
